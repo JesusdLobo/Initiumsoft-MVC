@@ -1,0 +1,373 @@
+﻿
+@model Initiumsoft_MVC.Models.ViewModels.AtencionCliente
+
+
+@{
+    ViewBag.Title = "Prueba";
+}
+
+
+
+<div class="d-flex flex-column flex-root">
+    <!--begin::Page-->
+    <div class="d-flex flex-row flex-column-fluid page">
+
+
+
+        <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+            <!--begin::Header-->
+            <div id="kt_header" class="header header-fixed">
+                <!--begin::Header Wrapper-->
+                <div class="header-wrapper rounded-top-xl d-flex flex-grow-1 align-items-center">
+                    <!--begin::Container-->
+                    <div class="container-fluid d-flex align-items-center justify-content-end justify-content-lg-between flex-wrap">
+                        <!--begin::Menu Wrapper-->
+                        <div class="header-menu-wrapper header-menu-wrapper-left" id="kt_header_menu_wrapper">
+                            <!--begin::Menu-->
+                            <div id="kt_header_menu" class="header-menu header-menu-mobile header-menu-layout-default">
+                                <!--begin::Nav-->
+                                <b><span style="color:white"> <h3> Ticket de atención al cliente</h3></span></b>
+                                <!--end::Nav-->
+                            </div>
+                            <!--end::Menu-->
+                        </div>
+                        <!--end::Menu Wrapper-->
+                        <!--begin::Toolbar-->
+                        <div class="d-flex align-items-center py-3 py-lg-2">
+
+                        </div>
+                        <!--end::Toolbar-->
+                    </div>
+                    <!--end::Container-->
+                </div>
+                <!--end::Header Wrapper-->
+            </div>
+            <!--end::Header-->
+            <!--begin::Content-->
+            <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+
+                <!--end::Subheader-->
+                <!--begin::Entry-->
+                <div class="d-flex flex-column-fluid">
+                    <!--begin::Container-->
+                    <div class="container-fluid">
+                        <!--begin::Notice-->
+                        <div class="alert alert-custom alert-white alert-shadow fade show gutter-b" role="alert">
+                            <div class="alert-icon">
+                                <span class="svg-icon svg-icon-primary svg-icon-xl">
+                                    <!--begin::Svg Icon | path:assets/media/svg/icons/Tools/Compass.svg-->
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <rect x="0" y="0" width="24" height="24" />
+                                            <path d="M7.07744993,12.3040451 C7.72444571,13.0716094 8.54044565,13.6920474 9.46808594,14.1079953 L5,23 L4.5,18 L7.07744993,12.3040451 Z M14.5865511,14.2597864 C15.5319561,13.9019016 16.375416,13.3366121 17.0614026,12.6194459 L19.5,18 L19,23 L14.5865511,14.2597864 Z M12,3.55271368e-14 C12.8284271,3.53749572e-14 13.5,0.671572875 13.5,1.5 L13.5,4 L10.5,4 L10.5,1.5 C10.5,0.671572875 11.1715729,3.56793164e-14 12,3.55271368e-14 Z" fill="#000000" opacity="0.3" />
+                                            <path d="M12,10 C13.1045695,10 14,9.1045695 14,8 C14,6.8954305 13.1045695,6 12,6 C10.8954305,6 10,6.8954305 10,8 C10,9.1045695 10.8954305,10 12,10 Z M12,13 C9.23857625,13 7,10.7614237 7,8 C7,5.23857625 9.23857625,3 12,3 C14.7614237,3 17,5.23857625 17,8 C17,10.7614237 14.7614237,13 12,13 Z" fill="#000000" fill-rule="nonzero" />
+                                        </g>
+                                    </svg>
+                                    <!--end::Svg Icon-->
+                                </span>
+                            </div>
+                            <div class="alert-text">
+                                Sistema Ticket de atención al cliente
+                            </div>
+                        </div>
+                        <!--end::Notice-->
+                        <!--begin::Row-->
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="card card-custom">
+                                    <div class="card-header">
+                                        <div class="card-title">
+                                            <span class="card-icon">
+                                                <i class="flaticon2-chat-1 text-primary"></i>
+                                            </span>
+                                            <h3 class="card-label">
+                                                Cola 1
+
+                                            </h3>
+                                        </div>
+
+                                    </div>
+                                    <div class="card-body">
+
+
+                                        @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+                                        {
+
+                                            <table class="table">
+                                                <tr style=" color: White; background-color: #1F396C; font-weight: bold;">
+                                                    <th></th>
+                                                    <th>C.I.</th>
+                                                    <th>Nombre</th>
+                                                    <th>Turno</th>
+
+                                                </tr>
+                                                @foreach (var item in ViewBag.ColaOne)
+                                                {
+                                                    <tr>
+                                                        <td>
+
+                                                           @Html.ActionLink(" ", "Turno/", new { id = item.IDAtencion }, new { @class = "icon-xl far fa-eye" }) 
+  </td>
+                                                        <td>@item.CI</td>
+                                                        <td>@item.Nombre</td>
+                                                        <td>@item.TurnoNumero</td>
+
+                                                    </tr>
+                                                }
+                                            </table>
+                                        }
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-between">
+                                        <small>Tiempo de Espera 2 minutos</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-6">
+                                <div class="card card-custom">
+                                    <div class="card-header">
+                                        <div class="card-title">
+                                            <span class="card-icon">
+                                                <i class="flaticon2-chat-1 text-primary"></i>
+                                            </span>
+                                            <h3 class="card-label">
+                                                Cola 2
+
+                                            </h3>
+                                        </div>
+
+                                    </div>
+                                    <div class="card-body">
+                                        @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+                                        {
+
+                                            <table class="table">
+                                                <tr style=" color: White; background-color: #1F396C; font-weight: bold;">
+                                                    <th></th>
+                                                    <th>C.I.</th>
+                                                    <th>Nombre</th>
+                                                    <th>Turno</th>
+
+                                                </tr>
+
+                                                @foreach (var item in ViewBag.ColaTow)
+                                                {
+                                            <tr>
+
+
+                                                <td>
+
+                                                    @Html.ActionLink(" ", "Turno/", new { id = item.IDAtencion }, new { @class = "icon-xl far fa-eye" })
+                                                </td>
+
+ 
+                                                
+                                                <td>@item.CI</td>
+                                                <td>@item.Nombre</td>
+                                                <td>@item.TurnoNumero</td>
+
+                                            </tr>
+                                                }
+
+
+
+                                            </table>
+                                        }
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-between">
+                                        <small>Tiempo de Espera 3 minutos</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end::Row-->
+                    </div>
+                    <!--end::Container-->
+                </div>
+                <!--end::Entry-->
+            </div>
+            <!--end::Content-->
+            <!--begin::Footer-->
+            <div class="footer py-2 py-lg-0 my-5 d-flex flex-lg-column" id="kt_footer">
+                <!--begin::Container-->
+                <div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
+                    <!--begin::Copyright-->
+                    <div class="text-dark order-2 order-md-1">
+                        <span class="text-muted font-weight-bold mr-2">2021©</span>
+                        <a href="#" target="_blank" class="text-dark-75 text-hover-primary">Jesus Lobo</a>
+                    </div>
+                    <!--end::Copyright-->
+                    <!--begin::Nav-->
+                    <div class="nav nav-dark order-1 order-md-2">
+
+                    </div>
+                    <!--end::Nav-->
+                </div>
+                <!--end::Container-->
+            </div>
+            <!--end::Footer-->
+        </div>
+
+        <div class="sidebar sidebar-left d-flex flex-row-auto flex-column" id="kt_sidebar">
+
+            <div class="sidebar-content flex-column-fluid pb-10 pt-9 px-5 px-lg-10">
+
+
+
+                <div class="card card-custom card-shadowless bg-white gutter-b">
+                    @using (Html.BeginForm("Index", "Home"))
+                    {
+
+                        @Html.AntiForgeryToken()
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        <div class="card-body  ">
+                            <h3 class="card-title align-items-start flex-column">
+                                <span class="card-label font-weight-bolder text-dark">Nuevo Cliente</span>
+
+                            </h3>
+                            <div class="form-group">
+                                <label>
+
+
+                                    @Html.LabelFor(model => model.CI, htmlAttributes: new { @class = "control-label col-md-12" })
+
+
+                                </label>
+
+
+                                @Html.EditorFor(model => model.CI, new
+                           {
+                               htmlAttributes = new
+                               {
+                                   @class = "form-control",
+                                   placeholder = "Ingrese Su C.I.",
+                                   autocomplete = "off",
+                                   onkeyup = "cambia(this);",
+                                   onkeypress = "return Validador(event);",
+
+                                   required = "required"
+
+                               }
+
+
+                           })
+
+
+
+
+                                @Html.ValidationMessageFor(model => model.CI, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    @Html.LabelFor(model => model.Nombre, htmlAttributes: new { @class = "control-label col-md-12" })
+
+
+                                </label>
+
+
+                                @Html.EditorFor(model => model.Nombre, new
+                           {
+                               htmlAttributes = new
+                               {
+                                   @class = "form-control",
+                                   placeholder = "Ingrese Su Nombre",
+
+                                   autocomplete = "off"
+                               ,
+                                   required = "required"
+                               }
+                           })
+                                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "text-danger" })
+
+
+
+
+
+
+
+
+                            </div>
+
+                            <hr />
+                            @ViewBag.ComplaintId
+
+                            <center>
+
+                                <input type="submit" class="btn btn-primary btn-lg btn-block" value="  Solicitar Turno" />
+
+
+
+
+                            </center>
+                        </div>
+                    }
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+ 
+
+
+
+<script type="text/javascript">
+    function CLienteYaCuen() {
+        alert("Estimado Cliente ya Tiene un Ticket para Atencion" );
+    };
+
+</script>
+@if (ViewBag.JavaScriptFunction != null)
+{
+    <script type="text/javascript">
+                      @Html.Raw(ViewBag.JavaScriptFunction)
+    </script>
+}
+
+<script type="text/javascript">
+    function cambia(obj) {
+        obj.value = obj.value.split(",").join(".")
+    }
+
+
+    function Validador(e) {
+
+        key = (document.all) ? e.keyCode : e.which;
+
+
+        if (key < 44 || key > 57) {
+
+            if (key == 8) {
+
+
+
+
+                return true
+
+
+
+            }
+
+            else
+                toastr.error('Solo Ingrese Numeros', 'Aviso de Sistema');
+
+            return false;
+
+        }
+
+    }
+
+
+</script>

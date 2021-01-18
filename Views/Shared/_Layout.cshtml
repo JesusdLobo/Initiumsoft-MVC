@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba</title>
+    @Styles.Render("~/assets/plugins/global/plugins.bundle.css")
+
+    @Styles.Render("~/assets/plugins/global/plugins.bundle.css")
+    @Styles.Render("~/assets/plugins/custom/prismjs/prismjs.bundle.css")
+    @Styles.Render("~/assets/css/style.bundle.css")
+    @Styles.Render("~/assets/css/styleWeb.css")
+
+
+
+ 
+
+</head>
+ 
+
+<body class="header-fixed header-mobile-fixed subheader-enabled sidebar-enabled page-loading">
+
+    <div id="kt_header_mobile" class="header-mobile header-mobile-fixed">
+
+
+        <div class="d-flex align-items-center">
+            <b><span style="color:white"> <h3> Ticket de atención al cliente</h3></span></b>
+
+
+        </div>
+
+    </div>
+
+
+    @RenderBody()
+ 
+
+
+
+
+    @Scripts.Render("~/assets/plugins/global/plugins.bundle.js")
+    @Scripts.Render("~/assets/plugins/custom/prismjs/prismjs.bundle.js")
+    @Scripts.Render("~/assets/js/scripts.bundle.js")
+
+
+
+
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
